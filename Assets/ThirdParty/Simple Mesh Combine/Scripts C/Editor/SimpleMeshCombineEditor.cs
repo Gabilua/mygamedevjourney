@@ -286,7 +286,7 @@ public class SimpleMeshCombineEditor: Editor {
 			}
 			GUILayout.Space(5.0f);
 			if (GUILayout.Button("Copy Materials", buttonStyle2)) {
-				CopyMaterials(target_cs.copyTarget.transform.FindChild("Mesh [SMC]"));
+				CopyMaterials(target_cs.copyTarget.transform.Find("Mesh [SMC]"));
 			}
 			
 			if (!Application.isPlaying) {
@@ -391,7 +391,7 @@ public class SimpleMeshCombineEditor: Editor {
 		var target_cs = (SimpleMeshCombine)target;
         GameObject clone = (GameObject)Instantiate(target_cs.gameObject,  target_cs.copyTarget.transform.position,  target_cs.copyTarget.transform.rotation);
 		if(target_cs.destroyOldColliders){
-			Transform o = target_cs.copyTarget.transform.FindChild("Colliders [SMC]");
+			Transform o = target_cs.copyTarget.transform.Find("Colliders [SMC]");
 			if(o != null){
 				DestroyImmediate(o.gameObject);
 			}
